@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Usar async comprehension para recolectar los 10 números del async_generator"""
+"""Recolecta 10 números usando async comprehension."""
 
 from typing import List
 
