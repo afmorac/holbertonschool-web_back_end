@@ -5,6 +5,7 @@ import asyncio
 import random
 from typing import AsyncGenerator
 
+
 async def async_generator() -> AsyncGenerator[float, None]:
     """
     Esta función corre 10 veces, espera 1 segundo en cada vuelta,
