@@ -4,7 +4,6 @@ Paginación hypermedia tolerante a borrados
 """
 
 import csv
-import math
 from typing import List, Dict
 
 
@@ -32,8 +31,7 @@ class Server:
             self.__indexed_dataset = {i: data[i] for i in range(len(data))}
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None,
-                        page_size: int = 10) -> Dict:
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
         Devuelve página y metadatos, saltando índices borrados
         """
@@ -51,8 +49,7 @@ class Server:
         data: List[List] = []
         cursor = index
 
-        # Recolecta 'page_size' ítems existentes,
-        # saltando huecos por borrados
+        # Recolecta 'page_size' ítems existentes, saltando huecos
         while len(data) < page_size and cursor < max_len:
             if cursor in idx_data:
                 data.append(idx_data[cursor])
