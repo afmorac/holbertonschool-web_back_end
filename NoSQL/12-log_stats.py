@@ -6,25 +6,21 @@ Stats de Nginx en MongoDB
 from pymongo import MongoClient
 
 
-def main():
-    """Imprime las stats con el formato exacto"""
-    client = MongoClient("mongodb://127.0.0.1:27017")
+if __name__ == "__main__":
+    # Conexión local por default
+    client = MongoClient()
     col = client.logs.nginx  # DB: logs, Collection: nginx
 
-    # total de logs
+    # 1) total
     total = col.count_documents({})
-    print(f"{total} logs")
+    print("{} logs".format(total))
 
-    # métodos en orden exacto (4 espacios, NO \t)
+    # 2) métodos (orden exacto) — OJO: TAB real antes de 'method'
     print("Methods:")
     for m in ["GET", "POST", "PUT", "PATCH", "DELETE"]:
         cnt = col.count_documents({"method": m})
-        print(f"    method {m}: {cnt}")
+        print("\tmethod {}: {}".format(m, cnt))
 
-    # GET /status
+    # 3) GET /status
     status_cnt = col.count_documents({"method": "GET", "path": "/status"})
-    print(f"{status_cnt} status check")
-
-
-if __name__ == "__main__":
-    main()
+    print("{} status check".format(status_cnt))
