@@ -15,11 +15,11 @@ def main():
     total = col.count_documents({})
     print(f"{total} logs")
 
-    # métodos en orden exacto
+    # métodos en orden exacto (4 espacios, NO \t)
     print("Methods:")
     for m in ["GET", "POST", "PUT", "PATCH", "DELETE"]:
         cnt = col.count_documents({"method": m})
-        print(f"\tmethod {m}: {cnt}")  # OJO: \t es tabulación
+        print(f"    method {m}: {cnt}")
 
     # GET /status
     status_cnt = col.count_documents({"method": "GET", "path": "/status"})
