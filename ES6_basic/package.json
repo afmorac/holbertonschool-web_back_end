@@ -1,0 +1,17 @@
+{
+  "name": "ES6_basic",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "dev": "node --require @babel/register"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/register": "^7.28.3",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.57.1",
+    "jest": "^29.7.0"
+  }
+}
