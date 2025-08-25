@@ -1,19 +1,25 @@
 {
-  "name": "es6_classes",
+  "name": "ES6_classes",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "full-test": "eslint . && jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
+    "jest": "^29.7.0",
+    "babel-jest": "^29.7.0",
     "@babel/core": "^7.28.3",
     "@babel/preset-env": "^7.28.3",
-    "babel-jest": "^30.0.5",
-    "eslint": "^9.34.0",
-    "jest": "^30.0.5"
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "extensionsToTreatAsEsm": [".js"],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
   }
 }
