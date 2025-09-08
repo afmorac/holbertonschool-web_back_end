@@ -32,7 +32,7 @@ function buildStudentsReport(path) {
         .sort()
         .forEach((field) => {
           out.push(
-            `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`
+            `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`,
           );
         });
 
